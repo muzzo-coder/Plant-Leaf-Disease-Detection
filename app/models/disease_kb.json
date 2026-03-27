@@ -1,0 +1,102 @@
+{
+  "0": {
+    "name": "Bacteria Spot",
+    "description": "A serious disease affecting tomatoes and peppers, causing dark, water-soaked spots on leaves and fruit, leading to defoliation and yield loss.",
+    "causes": "Caused by Xanthomonas bacteria species. Thrives in warm, humid weather and spreads via splashing rain or overhead irrigation.",
+    "organic_treatment": "Apply copper-based fungicides or Bacillus subtilis (biofungicide). Prune affected leaves immediately to improve airflow.",
+    "chemical_treatment": "Spray with fixed copper mixed with mancozeb to slow the spread. Start early in the season before heavy infection.",
+    "prevention_steps": "Rotate crops, avoid overhead watering, space plants adequately, and use disease-free seeds.",
+    "care_tips": "Ensure soil has excellent drainage. Water only at the base of the plant early in the morning.",
+    "severity": "High"
+  },
+  "1": {
+    "name": "Early Blight",
+    "description": "A fungal disease characterized by brown spots with concentric rings (target-like) on older leaves.",
+    "causes": "Caused by the fungus Alternaria solani. Favored by warm temperatures and heavy dew or rain.",
+    "organic_treatment": "Apply potassium bicarbonate sprays or copper soap. Remove the lower leaves that touch the soil.",
+    "chemical_treatment": "Apply fungicides containing chlorothalonil, mancozeb, or copper octanoate.",
+    "prevention_steps": "Mulch the base of the plant to prevent soil splash. Stake or cage plants to keep foliage off the ground.",
+    "care_tips": "Provide balanced fertilizer to keep plants vigorous, making them less susceptible.",
+    "severity": "Medium"
+  },
+  "2": {
+    "name": "Healthy",
+    "description": "The plant shows no visible signs of pathogenic disease or severe nutrient deficiency.",
+    "causes": "Optimal environmental conditions and good agricultural practices.",
+    "organic_treatment": "N/A - Continue current maintenance.",
+    "chemical_treatment": "N/A - Do not apply unnecessary chemicals.",
+    "prevention_steps": "Maintain regular scouting for early signs of pests or disease.",
+    "care_tips": "Monitor soil moisture, provide adequate sunlight, and maintain a consistent feeding schedule.",
+    "severity": "Low"
+  },
+  "3": {
+    "name": "Late Blight",
+    "description": "A devastating disease causing rapidly spreading, large water-soaked spots on leaves and stems, capable of destroying a crop in days.",
+    "causes": "Caused by the oomycete Phytophthora infestans. Spreads rapidly in cool, wet weather.",
+    "organic_treatment": "Remove and destroy infected plants immediately. Copper sprays can offer limited preventative protection.",
+    "chemical_treatment": "Apply preventative fungicides (chlorothalonil, mancozeb) rigorously before infection takes hold.",
+    "prevention_steps": "Plant resistant varieties. Destroy volunteer potatoes and nightshade weeds near tomatoes.",
+    "care_tips": "Do not compost infected plants; bag and dispose of them to prevent spores from overwintering.",
+    "severity": "High"
+  },
+  "4": {
+    "name": "Leaf Mold",
+    "description": "Identified by pale green or yellowing spots on the upper leaf surface and olive-green to brown mold on the underside.",
+    "causes": "Caused by Passalora fulva fungus. Typically occurs in high humidity environments like greenhouses.",
+    "organic_treatment": "Improve air circulation significantly. Use Neem oil or sulfur dust minimally.",
+    "chemical_treatment": "Apply fungicides like chlorothalonil or potassium bicarbonate.",
+    "prevention_steps": "Ventilate greenhouses well. Prune dense foliage to allow sunlight and air to penetrate the canopy.",
+    "care_tips": "Keep the relative humidity below 85% if growing indoors or in a high tunnel.",
+    "severity": "Medium"
+  },
+  "5": {
+    "name": "Septoria Leaf Spot",
+    "description": "Causes numerous small, circular spots with dark borders and lighter centers, starting on the oldest leaves.",
+    "causes": "Caused by Septoria lycopersici fungus. Fungal spores survive on debris and are splashed onto plants by rain.",
+    "organic_treatment": "Remove severely infected lower leaves. Spray with copper-based organic fungicides.",
+    "chemical_treatment": "Use mancozeb, chlorothalonil, or copper fungicides on a 7-10 day schedule.",
+    "prevention_steps": "Use thick organic mulch to block soil splash. Practice crop rotation (avoid planting tomatoes in the same spot for 3 years).",
+    "care_tips": "Water via drip irrigation rather than sprinklers to keep foliage dry.",
+    "severity": "Medium"
+  },
+  "6": {
+    "name": "Target Spot",
+    "description": "Produces dark brown necrotic lesions on leaves and sunken spots on fruit, which can resemble Early Blight.",
+    "causes": "Caused by the fungus Corynespora cassiicola. Thrives in warm weather with prolonged leaf surface wetness.",
+    "organic_treatment": "Remove heavily diseased leaves. Apply copper fungicides to protect new growth.",
+    "chemical_treatment": "Protect crops with broad-spectrum fungicides such as chlorothalonil or azoxystrobin.",
+    "prevention_steps": "Provide excellent canopy airflow. Avoid over-fertilizing with nitrogen, which promotes excessive dense growth.",
+    "care_tips": "Prune suckers and lower branches routinely to ensure rapid drying of leaves after rain.",
+    "severity": "High"
+  },
+  "7": {
+    "name": "Yellow Leaf Curl Virus",
+    "description": "Causes severe stunting, upward curling of leaves, yellowing margins, and significantly reduced yield.",
+    "causes": "A Begomovirus transmitted exclusively by the sweetpotato whitefly (Bemisia tabaci).",
+    "organic_treatment": "No cure for the virus. Control whiteflies using insecticidal soap, Neem oil, or yellow sticky traps.",
+    "chemical_treatment": "Use systemic insecticides (e.g., imidacloprid) applied early in the season to control the whitefly vector.",
+    "prevention_steps": "Plant resistant tomato cultivars. Use UV-reflective mulches to disorient whiteflies. Keep area weed-free.",
+    "care_tips": "Immediately uproot and destroy plants showing symptoms to protect the rest of the crop.",
+    "severity": "High"
+  },
+  "8": {
+    "name": "Mosaic Virus",
+    "description": "Leaves display a mottled pattern of light and dark green patches, sometimes becoming distorted or string-like.",
+    "causes": "Caused by TMV (Tobacco Mosaic Virus) or ToMV. Highly contagious via mechanical transmission (hands, tools).",
+    "organic_treatment": "No treatment exists. Plants must be eradicated.",
+    "chemical_treatment": "No chemical virucides are available.",
+    "prevention_steps": "Disinfect garden tools with 10% bleach solution. Do not use tobacco products near plants. Wash hands thoroughly.",
+    "care_tips": "Purchase certified virus-free seed or resistant varieties. Burn or bin infected plants; do not compost.",
+    "severity": "High"
+  },
+  "9": {
+    "name": "Two-Spotted Spider Mite",
+    "description": "Leaves show tiny yellow or white speckles (stippling). Dense infestations produce fine webbing on leaf undersides.",
+    "causes": "Tetranychus urticae, a tiny arachnid that sucks plant sap. Flourishes in hot, very dry conditions.",
+    "organic_treatment": "Spray plants with a strong blast of water to dislodge mites. Use insecticidal soaps, Neem oil, or predatory mites (Phytoseiulus persimilis).",
+    "chemical_treatment": "Apply selective miticides (e.g., bifenazate, abamectin) if the infestation is severe. Avoid broad-spectrum insecticides which kill predators.",
+    "prevention_steps": "Maintain adequate soil moisture. Occasionally mist foliage during extremely hot, dry periods to deter mites.",
+    "care_tips": "Routinely inspect the underside of leaves with a magnifying glass to catch infestations early.",
+    "severity": "Medium"
+  }
+}

@@ -1,0 +1,29 @@
+# Pycache and Object files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# OSX files
+.DS_Store
+
+# Uploaded Files
+static/uploads/
+uploads/
+
+# Models
+model/model.h5
+app/models/*.h5
+
+# IDEs
+.vscode/
+.idea/

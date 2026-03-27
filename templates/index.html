@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeafAI - Plant Disease Detection</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    
+    <!-- Background Elements for Glassmorphism -->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-leaf"></i>
+            <span>LeafAI</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active" id="nav-detector">Detector</a>
+            <a href="#history" id="nav-history">History</a>
+            <a href="#about" id="nav-about">About</a>
+        </div>
+        <div class="nav-actions">
+            <button class="btn-primary-outline" id="btn-webcam"><i class="fa-solid fa-camera"></i> Webcam</button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="container">
+        
+        <!-- Header Section -->
+        <header class="app-header">
+            <div class="badge">AI-Powered</div>
+            <h1>Diagnose Plant Diseases <span>Instantly</span></h1>
+            <p>Upload a clear image of a plant leaf and our advanced machine learning model will detect diseases, severity, and recommend real-world treatments.</p>
+        </header>
+
+        <!-- Application Layout -->
+        <div class="app-layout">
+            
+            <!-- Upload Section -->
+            <section class="upload-section glass-card" id="upload-panel">
+                
+                <div class="upload-area" id="drop-zone">
+                    <input type="file" id="file-input" accept="image/png, image/jpeg, image/jpg" hidden>
+                    
+                    <div class="upload-placeholder" id="upload-placeholder">
+                        <div class="upload-icon">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </div>
+                        <h3>Drag & drop your leaf image</h3>
+                        <p>or <span class="browse-link text-primary">browse files</span></p>
+                        <span class="file-hint">Supports: JPG, JPEG, PNG (Max 16MB)</span>
+                    </div>
+
+                    <div class="preview-area hidden" id="preview-area">
+                        <img id="image-preview" src="" alt="Leaf Preview">
+                        <div class="preview-actions">
+                            <button id="btn-remove" class="btn-icon" title="Remove image"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-bar">
+                    <button class="btn-primary w-full" id="btn-predict" disabled>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Analyze Leaf
+                    </button>
+                </div>
+
+                <!-- Loading State overlay -->
+                <div class="loading-overlay hidden" id="loading-state">
+                    <div class="ai-scanner">
+                        <div class="scanner-bar"></div>
+                    </div>
+                    <p class="loading-text">Analyzing neural networks...</p>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section hidden" id="results-panel">
+                <div class="glass-card result-card">
+                    <div class="result-header">
+                        <h2>Analysis Complete</h2>
+                        <button class="btn-secondary btn-sm" id="btn-new-scan"><i class="fa-solid fa-rotate-right"></i> Scan Another</button>
+                    </div>
+
+                    <div class="result-body">
+                        
+                        <!-- Confidence & Severity Metrics -->
+                        <div class="metrics-grid">
+                            <div class="metric-box confidence-box">
+                                <span class="metric-label">Confidence</span>
+                                <div class="progress-ring" id="confidence-ring">
+                                    <span class="progress-value" id="confidence-val">0%</span>
+                                </div>
+                            </div>
+                            <div class="metric-box severity-box">
+                                <span class="metric-label">Severity Level</span>
+                                <div class="severity-badge" id="severity-badge">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                    <span id="severity-val">Unknown</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Diagnosis Details (Tabbed UI) -->
+                        <div class="diagnosis-wrapper">
+                            <h3 class="disease-title" id="disease-name">Disease Name</h3>
+                            <p class="disease-desc" id="disease-desc">Description loading...</p>
+                            
+                            <!-- Tabs Navigation -->
+                            <div class="tabs-nav">
+                                <button class="tab-btn active" data-tab="treatment">Treatment</button>
+                                <button class="tab-btn" data-tab="prevention">Prevention</button>
+                                <button class="tab-btn" data-tab="care">Care Guide</button>
+                            </div>
+                            
+                            <!-- Tab Content: Treatment -->
+                            <div class="tab-content active" id="tab-treatment">
+                                <div class="info-group">
+                                    <div class="info-label"><i class="fa-solid fa-flask"></i> Chemical Treatment</div>
+                                    <p class="info-value" id="chemical-val">Loading...</p>
+                                </div>
+                                <div class="info-group">
+                                    <div class="info-label"><i class="fa-solid fa-seedling"></i> Organic Alternative</div>
+                                    <p class="info-value" id="organic-val">Loading...</p>
+                                </div>
+                            </div>
+
+                            <!-- Tab Content: Prevention -->
+                            <div class="tab-content hidden" id="tab-prevention">
+                                <div class="info-group">
+                                    <div class="info-label"><i class="fa-solid fa-shield-virus"></i> Prevention Steps</div>
+                                    <p class="info-value" id="prevention-val">Loading...</p>
+                                </div>
+                                <div class="info-group">
+                                    <div class="info-label"><i class="fa-solid fa-magnifying-glass-chart"></i> Causes</div>
+                                    <p class="info-value" id="causes-val">Loading...</p>
+                                </div>
+                            </div>
+
+                            <!-- Tab Content: Care Guide -->
+                            <div class="tab-content hidden" id="tab-care">
+                                <div class="info-group">
+                                    <div class="info-label"><i class="fa-solid fa-hand-holding-droplet"></i> Care Tips</div>
+                                    <p class="info-value" id="care-val">Loading...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- History Section -->
+        <section class="history-section hidden" id="history-panel">
+            <header class="app-header">
+                <div class="badge">Your Scans</div>
+                <h1>Diagnosis <span>History</span></h1>
+                <p>Review your previous leaf scans and treatments from this device.</p>
+            </header>
+            <div class="glass-card">
+                <div class="history-grid" id="history-grid">
+                    <!-- Dynamic history items will appear here -->
+                    <p class="text-muted" style="text-align:center; width:100%; grid-column:1/-1;">No history found yet. Scan a leaf to get started!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section hidden" id="about-panel">
+            <header class="app-header">
+                <div class="badge">About LeafAI</div>
+                <h1>Empowering <span>Agritech</span></h1>
+            </header>
+            <div class="glass-card" style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                <h2>Our Mission</h2>
+                <p class="disease-desc" style="padding-left:0; margin-top:1rem;">LeafAI is an industry-ready agricultural platform built to help farmers, gardeners, and agronomists quickly detect crop diseases using deep learning. By identifying diseases like Early Blight, Late Blight, and Spider Mites instantly, we aim to reduce crop yield losses and promote sustainable farming practices.</p>
+                
+                <h2 style="margin-top:2rem;">How it Works</h2>
+                <p class="disease-desc" style="padding-left:0; margin-top:1rem;">Our backend runs on a highly optimized Flask architecture communicating with a TensorFlow/Keras neural network. When a user uploads a photo, the image is passed into our prediction service which calculates the specific disease class alongside a confidence threshold logic that rejects non-plant images. Finally, the results are cross-referenced with our comprehensive Knowledge Base mapping the disease to specific Organic and Chemical treatments.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Webcam Modal -->
+    <div class="modal hidden" id="webcam-modal">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-camera"></i> Capture Leaf</h2>
+                <button class="btn-icon" id="btn-close-webcam"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <video id="webcam-video" autoplay playsinline></video>
+                <canvas id="webcam-canvas" class="hidden"></canvas>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary w-full" id="btn-capture"><i class="fa-solid fa-camera-retro"></i> Take Photo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
