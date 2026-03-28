@@ -173,4 +173,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/muzzo-coder)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mujjamil-sofi/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mujammilsofi2@gmail.com)
->>>>>>> 47e8250 (Initial commit)
+
